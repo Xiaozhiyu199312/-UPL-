@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wqdata.upl.dao.ApplicationInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.wqdata.upl.entity.ApplicationInfo">
+        <result column="CUSTOMERNAME" jdbcType="VARCHAR" property="customername"/>
+        <result column="CERTTYPE" jdbcType="VARCHAR" property="certtype"/>
+        <result column="CERTID" jdbcType="VARCHAR" property="certid"/>
+        <result column="ISSERIALNO" jdbcType="BIGINT" property="isserialno"/>
+        <result column="MOBILETELEPHONE" jdbcType="BIGINT" property="mobiletelephone"/>
+        <result column="SEX" jdbcType="VARCHAR" property="sex"/>
+        <result column="PLACE" jdbcType="VARCHAR" property="place"/>
+        <result column="OPERATEUSERID" jdbcType="BIGINT" property="operateuserid"/>
+        <result column="WORKID" jdbcType="VARCHAR" property="workid"/>
+        <result column="SALECHANNELID" jdbcType="VARCHAR" property="salechannelid"/>
+        <result column="EMPLOYEETYPE" jdbcType="VARCHAR" property="employeetype"/>
+        <result column="BUSINESSTYPE" jdbcType="BIGINT" property="businesstype"/>
+        <result column="BUSINESSSUM" jdbcType="BIGINT" property="businesssum"/>
+        <result column="TERMMONTH" jdbcType="BIGINT" property="termmonth"/>
+        <result column="LOCALHOUSEFLAG" jdbcType="VARCHAR" property="localhouseflag"/>
+        <result column="MONTHINCOME" jdbcType="BIGINT" property="monthincome"/>
+        <result column="MARRIAGE" jdbcType="VARCHAR" property="marriage"/>
+        <result column="EMPLOYRECORD" jdbcType="VARCHAR" property="employrecord"/>
+        <result column="EMAILADD" jdbcType="VARCHAR" property="emailadd"/>
+        <result column="RELATIONSHIP" jdbcType="VARCHAR" property="relationship"/>
+        <result column="RELATIVENAME" jdbcType="VARCHAR" property="relativename"/>
+        <result column="RELATIVEPHONE" jdbcType="VARCHAR" property="relativephone"/>
+        <result column="RESULT" jdbcType="VARCHAR" property="result"/>
+        <result column="FINISHTIME" jdbcType="VARCHAR" property="finishtime"/>
+        <result column="INPUTDATE" jdbcType="VARCHAR" property="inputdate"/>
+        <result column="INPUTORGID" jdbcType="BIGINT" property="inputorgid"/>
+        <result column="INPUTUSERID" jdbcType="BIGINT" property="inputuserid"/>
+        <result column="REMARK" jdbcType="VARCHAR" property="remark"/>
+        <result column="TIPS" jdbcType="VARCHAR" property="tips"/>
+        <result column="CYCLETIME" jdbcType="BIGINT" property="cycletime"/>
+        <result column="STATUS" jdbcType="BIGINT" property="status"/>
+        <result column="LOCAL_REGISTER" jdbcType="VARCHAR" property="localRegister"/>
+        <result column="CUST_TYPE" jdbcType="VARCHAR" property="custType"/>
+        <result column="CLIENT_TYPE" jdbcType="VARCHAR" property="clientType"/>
+        <result column="OCCUPATION" jdbcType="VARCHAR" property="occupation"/>
+        <result column="BELONG_ORG" jdbcType="VARCHAR" property="belongOrg"/>
+        <result column="HPF_INCOME" jdbcType="VARCHAR" property="hpfIncome"/>
+        <result column="SOCIAL_INCOME" jdbcType="VARCHAR" property="socialIncome"/>
+        <result column="TAX_INCOME" jdbcType="VARCHAR" property="taxIncome"/>
+        <result column="INSURANCE_AMOUNT" jdbcType="VARCHAR" property="insuranceAmount"/>
+        <result column="TITLE_RANK" jdbcType="VARCHAR" property="titleRank"/>
+        <result column="CIVIL_RANK" jdbcType="VARCHAR" property="civilRank"/>
+        <result column="SEP_LOAN_PRODUCE" jdbcType="VARCHAR" property="sepLoanProduce"/>
+        <result column="SUBMIT_ACTION" jdbcType="VARCHAR" property="submitAction"/>
+        <result column="SUBMIT_TIMES" jdbcType="VARCHAR" property="submitTimes"/>
+        <result column="UPDATETIME" jdbcType="VARCHAR" property="updatetime"/>
+        <result column="PAYMENT_METHOD" jdbcType="VARCHAR" property="paymentMethod"/>
+        <result column="REALNAME_IDENT_RESULT" jdbcType="VARCHAR" property="realnameIdentResult"/>
+        <result column="REALNAME_IDENT_REMARK" jdbcType="VARCHAR" property="realnameIdentRemark"/>
+    </resultMap>
+
+
+    <select id="list" parameterType="String" resultType="java.util.LinkedHashMap">
+        ${sqlStr}
+    </select>
+
+    <select id="getPageInfo" parameterType="String" resultMap="BaseResultMap">
+        ${sqlStr}
+    </select>
+
+    <select id="getSelectCount" parameterType="String" resultType="Long">
+        ${sqlStr}
+    </select>
+
+    <insert id="add" parameterType="String">
+       ${sqlStr}
+    </insert>
+
+    <update id="update" parameterType="String">
+        ${sqlStr}
+    </update>
+
+    <select id="getCount" resultType="Long">
+        SELECT count(*) FROM t_application_info WHERE ISSERIALNO = ${isserialno}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wqdata.upl.dao.ClientInfoMapper">
+
+  <resultMap id="BaseResultMap" type="com.wqdata.upl.entity.ClientInfo">
+    <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
+    <result column="DEVICE_ID" jdbcType="VARCHAR" property="deviceId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="IDCARD" jdbcType="VARCHAR" property="idcard" />
+    <result column="EDCATION_MAX" jdbcType="VARCHAR" property="edcationMax" />
+    <result column="IS_MARRY" jdbcType="VARCHAR" property="isMarry" />
+    <result column="LIVE" jdbcType="VARCHAR" property="live" />
+    <result column="INCOME" jdbcType="VARCHAR" property="income" />
+    <result column="EMAILL" jdbcType="VARCHAR" property="emaill" />
+    <result column="CLIENT_TYPE" jdbcType="VARCHAR" property="clientType" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="CREATETIME" jdbcType="VARCHAR" property="createtime" />
+    <result column="UPDATETIME" jdbcType="VARCHAR" property="updatetime" />
+  </resultMap>
+
+  <select id="getCount" resultType="Long">
+    SELECT count(*) FROM t_client_info WHERE MOBILE = ${mobile}
+  </select>
+
+  <select id="getPageInfo" parameterType="String" resultMap="BaseResultMap">
+    ${sqlStr}
+  </select>
+
+  <select id="getSelectCount" parameterType="String" resultType="Long">
+    ${sqlStr}
+  </select>
+
+  <select id="list" parameterType="String" resultType="java.util.LinkedHashMap">
+    ${sqlStr}
+  </select>
+
+  <insert id="add" parameterType="String" >
+    ${sqlStr}
+  </insert>
+
+  <update id="update" parameterType="String" >
+    ${sqlStr}
+  </update>
+
+
+</mapper>
